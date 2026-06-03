@@ -5,13 +5,13 @@ variable "twc_token" {
 }
 
 variable "ipv4_kz" {
-    description = "IP VDS KZ"
-    type = string
-    sensitive = true
+  description = "IP VDS KZ"
+  type        = string
+  sensitive   = true
 }
 
 variable "ipv4_ru" {
-    description = "IP VDS RU"
-    type = string
-    sensitive = true
+  description = "IP VDS RU"
+  type        = string
+  sensitive   = true
 }
