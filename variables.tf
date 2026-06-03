@@ -15,3 +15,9 @@ variable "ipv4_ru" {
   type        = string
   sensitive   = true
 }
+
+variable "dkim_pubkey" {
+  description = "DKIM Key"
+  type        = string
+  sensitive   = true
+}
