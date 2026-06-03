@@ -1,3 +1,3 @@
 provider "twc" {
-  token = var.twc_token 
+  token = var.twc_token
 }
