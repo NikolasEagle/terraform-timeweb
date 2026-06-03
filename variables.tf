@@ -16,6 +16,34 @@ variable "ipv4_ru" {
   sensitive   = true
 }
 
+variable "domains_kz" {
+  description = "List of subdomains for VDS KZ"
+  type        = list(string)
+  default = [
+    "@",
+    "element",
+    "admin.element",
+    "flask",
+    "grafana",
+    "mail",
+    "mas",
+    "matrix",
+    "mousebook",
+    "moviecat",
+    "mozart",
+    "mrtc",
+    "synapse"
+  ]
+}
+
+variable "domains_ru" {
+  description = "List of subdomains for VDS RU"
+  type        = list(string)
+  default = [
+    "bach"
+  ]
+}
+
 variable "dkim_pubkey" {
   description = "DKIM Key"
   type        = string
