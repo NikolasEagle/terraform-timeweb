@@ -22,6 +22,8 @@ resource "twc_dns_rr" "a_records_ru" {
   value    = var.ipv4_ru
 }
 
+/*
+
 ### EMAIL SECURITY RECORDS ###
 
 resource "twc_dns_rr" "dmarc" {
@@ -76,3 +78,5 @@ resource "twc_dns_rr" "mx" {
   type    = "MX"
   value   = "10 mail.${data.twc_dns_zone.eagle.name}"
 }
+
+*/
