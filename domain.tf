@@ -80,3 +80,13 @@ resource "twc_dns_rr" "mx" {
 }
 
 */
+
+### CNAME RECORDS ###
+
+resource "twc_dns_rr" "cdn_cname" {
+  zone_id = data.twc_dns_zone.eagle.id
+  name    = "cdn.albinoni.eagle.com.ru"
+  type    = "CNAME"
+  value   = "albinoni.eagle.com.ru"
+}
+
