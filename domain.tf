@@ -85,7 +85,7 @@ resource "twc_dns_rr" "mx" {
 
 resource "twc_dns_rr" "cdn_cname" {
   zone_id = data.twc_dns_zone.eagle.id
-  name    = "cdn.eagle.com.ru"
+  name    = "cdn.eagle.com.ru."
   type    = "CNAME"
   value   = "u413aue5a3.cdn.twcstorage.ru"
 }
