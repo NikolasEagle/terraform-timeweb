@@ -16,11 +16,16 @@ variable "ipv4_ru" {
   sensitive   = true
 }
 
+variable "ipv4_vpn" {
+  description = "IP VDS VPN"
+  type        = string
+  sensitive   = true
+}
+
 variable "domains_kz" {
   description = "List of subdomains for VDS KZ"
   type        = list(string)
   default = [
-    "@",
     "element",
     "admin.element",
     "flask",
@@ -41,6 +46,14 @@ variable "domains_ru" {
   type        = list(string)
   default = [
     "bach"
+  ]
+}
+
+variable "domains_vpn" {
+  description = "List of subdomains for VDS VPN"
+  type        = list(string)
+  default = [
+    "@"
   ]
 }
 

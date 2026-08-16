@@ -22,6 +22,24 @@ resource "twc_dns_rr" "a_records_ru" {
   value    = var.ipv4_ru
 }
 
+resource "twc_dns_rr" "a_records_vpn" {
+  for_each = toset(var.domains_vpn)
+  zone_id  = data.twc_dns_zone.eagle.id
+  name     = each.key
+  type     = "A"
+  value    = var.ipv4_vpn
+}
+
+
+### CNAME RECORDS ###
+
+resource "twc_dns_rr" "cdn_cname" {
+  zone_id = data.twc_dns_zone.eagle.id
+  name    = "cdn"
+  type    = "CNAME"
+  value   = "u413aue5a3.cdn.twcstorage.ru"
+}
+
 /*
 
 ### EMAIL SECURITY RECORDS ###
@@ -54,22 +72,6 @@ resource "twc_dns_rr" "report_dmarc" {
   value   = "v=DMARC1;"
 }
 
-### CNAME RECORDS ###
-
-resource "twc_dns_rr" "autoconfig_cname" {
-  zone_id = data.twc_dns_zone.eagle.id
-  name    = "autoconfig"
-  type    = "CNAME"
-  value   = "mail.${data.twc_dns_zone.eagle.name}"
-}
-
-resource "twc_dns_rr" "autodiscover_cname" {
-  zone_id = data.twc_dns_zone.eagle.id
-  name    = "autodiscover"
-  type    = "CNAME"
-  value   = "mail.${data.twc_dns_zone.eagle.name}"
-}
-
 ### MX RECORDS ###
 
 resource "twc_dns_rr" "mx" {
@@ -80,13 +82,4 @@ resource "twc_dns_rr" "mx" {
 }
 
 */
-
-### CNAME RECORDS ###
-
-resource "twc_dns_rr" "cdn_cname" {
-  zone_id = data.twc_dns_zone.eagle.id
-  name    = "cdn.eagle.com.ru."
-  type    = "CNAME"
-  value   = "u413aue5a3.cdn.twcstorage.ru"
-}
 
