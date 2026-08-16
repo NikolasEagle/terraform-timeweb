@@ -32,8 +32,7 @@ variable "domains_kz" {
     "moviecat",
     "mozart",
     "mrtc",
-    "synapse",
-    "albinoni"
+    "synapse"
   ]
 }
 
