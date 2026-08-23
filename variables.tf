@@ -28,9 +28,7 @@ variable "domains_kz" {
   default = [
     "element",
     "admin.element",
-    "flask",
     "grafana",
-    "mail",
     "mas",
     "matrix",
     "mousebook",
@@ -55,10 +53,4 @@ variable "domains_vpn" {
   default = [
     "@"
   ]
-}
-
-variable "dkim_pubkey" {
-  description = "DKIM Key"
-  type        = string
-  sensitive   = true
 }
