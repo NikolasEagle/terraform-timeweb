@@ -10,12 +10,6 @@ variable "ipv4_kz" {
   sensitive   = true
 }
 
-variable "ipv4_ru" {
-  description = "IP VDS RU"
-  type        = string
-  sensitive   = true
-}
-
 variable "ipv4_vpn" {
   description = "IP VDS VPN"
   type        = string
@@ -28,22 +22,12 @@ variable "domains_kz" {
   default = [
     "element",
     "admin.element",
-    "grafana",
     "mas",
     "matrix",
     "mousebook",
     "moviecat",
-    "mozart",
     "mrtc",
     "synapse"
-  ]
-}
-
-variable "domains_ru" {
-  description = "List of subdomains for VDS RU"
-  type        = list(string)
-  default = [
-    "bach"
   ]
 }
 
