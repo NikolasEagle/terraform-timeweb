@@ -4,8 +4,8 @@ variable "twc_token" {
   sensitive   = true
 }
 
-variable "ipv4_kz" {
-  description = "IP VDS KZ"
+variable "ipv4_k3s" {
+  description = "IP VDS K3S"
   type        = string
   sensitive   = true
 }
@@ -16,8 +16,8 @@ variable "ipv4_vpn" {
   sensitive   = true
 }
 
-variable "domains_kz" {
-  description = "List of subdomains for VDS KZ"
+variable "domains_k3s" {
+  description = "List of subdomains for VDS K3S"
   type        = list(string)
   default = [
     "element",

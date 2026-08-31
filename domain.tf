@@ -6,12 +6,12 @@ data "twc_dns_zone" "eagle" {
 
 ### A RECORDS ###
 
-resource "twc_dns_rr" "a_records_kz" {
-  for_each = toset(var.domains_kz)
+resource "twc_dns_rr" "a_records_k3s" {
+  for_each = toset(var.domains_k3s)
   zone_id  = data.twc_dns_zone.eagle.id
   name     = each.key
   type     = "A"
-  value    = var.ipv4_kz
+  value    = var.ipv4_k3s
 }
 
 resource "twc_dns_rr" "a_records_vpn" {
